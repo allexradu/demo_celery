@@ -1,0 +1,4 @@
+docker run --name rdb -p 6379:6379 redis
+docker exec -it rdb redis-cli
+docker start rdb -p 6379:6379
+celery -A demo_celery worker -l INFO
